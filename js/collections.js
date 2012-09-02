@@ -1,7 +1,7 @@
 var Collections = {};
 
 Collections.Images = Backbone.Collection.extend({
-	sort: "hot",
+	sort: "new",
 	page: 1,
 
 	/*
