@@ -28,11 +28,12 @@
 	width: 50%;
 	text-decoration: none;
 	margin: auto;
+	max-width: 90%;
 }
 
 #viewer img {
 	display: block;
-	max-width: 600px;
+	max-width: 90%;
 	height: auto;
 	width: auto;
 	margin: 0 auto 20px;
