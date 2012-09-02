@@ -41,6 +41,7 @@
 	max-height: 150px;
 }
 
-.item a:hover .title {
+.item a:hover .title,
+.item.selected .title {
 	display: block;
 }

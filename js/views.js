@@ -41,6 +41,7 @@ Views.Image = Backbone.View.extend({
 		event.preventDefault();
 		event.stopPropagation();
 
+		this.$el.scrollIntoView(false);
 		this.$el.addClass("selected").siblings(".selected").removeClass("selected");
 		app.views.viewer.showItem(this.model);
 	}
@@ -87,7 +88,7 @@ Views.Viewer = Backbone.View.extend({
 	},
 
 	initialize: function() {
-		$(document).bind("keydown", this.handleKeypress);
+		$(document).on("keydown", this.handleKeypress);
 	},
 
 	handleKeypress: function(event) {
@@ -106,6 +107,11 @@ Views.Viewer = Backbone.View.extend({
 			case 37:
 				selected.prev().click();
 			break;
+
+			// escape = close
+			case 27:
+				app.views.viewer.close();
+			break;
 		}
 	},
 
@@ -122,6 +128,5 @@ Views.Viewer = Backbone.View.extend({
 	close: function(event) {
 		this.$el.hide(100);
 		$("body").removeClass("noscroll");
-		app.views.images.$(".selected").removeClass("selected");
 	},
 })
