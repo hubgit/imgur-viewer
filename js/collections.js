@@ -4,13 +4,27 @@ Collections.Images = Backbone.Collection.extend({
 	sort: "hot",
 	page: 1,
 
-	proxy: function(url) {
+	/*
+	yqlproxy: function(url) {
 		var params = {
 			q: "select gallery from json where url=\"" + url + "\"",
 			format: "json",
 		};
 
 		return "http://query.yahooapis.com/v1/public/yql" + "?" + $.param(params);
+	},
+
+	yqlparse: function(data) {
+		if(!data.query.count) return [];
+
+		return data.query.results.json.map(function(item) {
+			return new Models.Image(item.gallery);
+		});
+	},
+	*/
+
+	proxy: function(url) {
+		return "http://www.macropus.org/imgur/gallery.php?url=" + encodeURIComponent(url);
 	},
 
 	url: function() {
@@ -20,10 +34,11 @@ Collections.Images = Backbone.Collection.extend({
 	},
 
 	parse: function(data) {
-		if(!data.query.count) return [];
+		if(!data.gallery) return [];
 
-		return data.query.results.json.map(function(item) {
-			return new Models.Image(item.gallery);
+		return data.gallery.map(function(item) {
+			return new Models.Image(item);
 		});
-	}
+	},
+
 });

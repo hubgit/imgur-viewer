@@ -66,7 +66,7 @@ Views.Pagination = Backbone.View.extend({
 
 	    node.addClass("loading");
 
-	    return this.collection.fetch({ add: true, dataType: "jsonp" }).done(function() {
+	    return this.collection.fetch({ add: true }).done(function() {
 	        node.removeClass("loading");
 	    });
 	},
