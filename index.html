@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<title>Imgur Viewer</title>
+
+<!-- stylesheets -->
+
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/pagination.css">
+<link rel="stylesheet" href="css/viewer.css">
+<link rel="stylesheet" href="css/item.css">
+
+<!-- scripts -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="vendor/jquery/jquery.inview.js"></script>
+
+<script src="vendor/handlebars.js"></script>
+<script src="vendor/underscore.js"></script>
+<script src="vendor/backbone.js"></script>
+
+<script src="js/templates.js"></script>
+
+<script src="js/services.js"></script>
+<script src="js/models.js"></script>
+<script src="js/collections.js"></script>
+<script src="js/views.js"></script>
+<script src="js/app.js"></script>
+
+<!-- templates -->
+
+<script type="text/html" data-template="Image">
+	<a href="http://i.imgur.com/{{hash}}{{ext}}"><img src="http://i.imgur.com/{{hash}}b.jpg">{{#if title}}<div class="title">{{title}}</div>{{/if}}</a>
+</script>
+
+<script type="text/html" data-template="Viewer">
+	{{#if title}}<a href="http://imgur.com/{{hash}}" target="_new">{{title}}</a>{{/if}}
+	<img height="{{height}}" width="{{width}}" src="http://i.imgur.com/{{hash}}.jpg">
+</script>

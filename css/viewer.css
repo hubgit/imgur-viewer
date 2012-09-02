@@ -1,0 +1,40 @@
+.noscroll {
+	overflow: hidden;
+}
+
+.noscroll .collection {
+	filter: blur(10px);
+	-webkit-filter: blur(10px);
+}
+
+#viewer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	display: none;
+	text-align: center;
+	overflow-y: scroll;
+	cursor: crosshair;
+}
+
+#viewer a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	width: 50%;
+	text-decoration: none;
+	margin: auto;
+}
+
+#viewer img {
+	display: block;
+	max-width: 600px;
+	height: auto;
+	width: auto;
+	margin: 0 auto 20px;
+	border: 2px solid #ddd;
+}
