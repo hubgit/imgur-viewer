@@ -24,10 +24,9 @@
 	display: block;
 	text-align: left;
 	margin: 10px 30px 10px;
-	padding: 10px 0;
 	max-width: 90%;
 	font-size: 120%;
-	color: #ddd;
+	color: #eee;
 }
 
 #viewer img {
