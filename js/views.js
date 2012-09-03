@@ -26,7 +26,8 @@ Views.Images = Backbone.View.extend({
 
 Views.Image = Backbone.View.extend({
 	events: {
-		"click": "clicked"
+		"click": "openViewer",
+		"touchend": "openViewer"
 	},
 
 	render: function() {
@@ -37,7 +38,7 @@ Views.Image = Backbone.View.extend({
 		});
 	},
 
-	clicked: function(event) {
+	openViewer: function(event) {
 		event.preventDefault();
 		event.stopPropagation();
 

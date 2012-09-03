@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="css/viewer.css">
 <link rel="stylesheet" href="css/item.css">
 
+<link rel="stylesheet" media="screen and (max-width: 700px)" href="css/thin.css">
+
 <!-- scripts -->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -33,10 +35,9 @@
 <!-- templates -->
 
 <script type="text/html" data-template="Image">
-	<a href="http://i.imgur.com/{{hash}}{{ext}}"><img src="http://i.imgur.com/{{hash}}b.jpg">{{#if title}}<div class="title">{{title}}</div>{{/if}}</a>
-</script>
+	<a href="http://i.imgur.com/{{hash}}{{ext}}">{{#if title}}<div class="title">{{title}}</div>{{/if}}<img src="http://i.imgur.com/{{hash}}b.jpg"></a></script>
 
 <script type="text/html" data-template="Viewer">
-	{{#if title}}<a href="http://imgur.com/{{hash}}" target="_new">{{title}}</a>{{/if}}
+	{{#if title}}<a href="http://imgur.com/{{hash}}" target="_new" class="title">{{title}}</a>{{/if}}
 	<img height="{{height}}" width="{{width}}" src="http://i.imgur.com/{{hash}}.jpg">
 </script>

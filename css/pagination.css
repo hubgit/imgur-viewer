@@ -8,7 +8,7 @@ a[rel=next] {
 }
 
 a[rel=next]:hover {
-	background: #447;
+	/*background: #447;*/
 }
 
 a[rel=next]:after {
